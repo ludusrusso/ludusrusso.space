@@ -1,11 +1,18 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "@emotion/styled"
+
+const Title = styled.span`
+  font-size: 14pt;
+  font-weight: bold;
+  font-family: sans-serif;
+`
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `#222`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -16,7 +23,7 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <Title style={{ margin: 0 }}>
         <Link
           to="/"
           style={{
@@ -26,7 +33,7 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
-      </h1>
+      </Title>
     </div>
   </header>
 )

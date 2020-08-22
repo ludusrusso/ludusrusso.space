@@ -35,9 +35,15 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          Copyright © 2016 - {new Date().getFullYear()}{" "}
+          <a
+            href="https://twitter.com/ludusrusso"
+            target="_blank"
+            rel="noreferrer"
+          >
+            @ludusrusso
+          </a>
+          !
         </footer>
       </div>
     </>
