@@ -10,6 +10,7 @@ const Cnt = styled.div`
   margin-bottom: 100px;
   font-size: 16pt;
   text-align: justify;
+  width: 100%;
 `
 
 export const PageTemplate = ({ children }) => {

@@ -24,8 +24,8 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
   margin: 0 auto;
-  width: ${props => props.theme.maxWidth};
-  padding: 0 1.0875rem 1.45rem;
+  width: 100vw;
+  max-width: ${props => props.theme.maxWidth};
 `
 
 const Layout = ({ children }) => {

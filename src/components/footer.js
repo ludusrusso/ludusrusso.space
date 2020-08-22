@@ -7,6 +7,7 @@ const _Footer = styled.footer`
   padding: 20px;
 
   & > div {
+    width: 100vw;
     max-width: ${props => props.theme.maxWidth};
     margin: auto;
     display: flex;
@@ -47,6 +48,7 @@ export const Footer = () => {
           <a href="https://twitter.com/ludusrusso">twitter</a>
           <a href="https://www.linkedin.com/in/ludusrusso/">linkedin</a>
           <a href="https://github.com/ludusrusso">github</a>
+          <a href="https://www.youtube.com/user/Ludus489">youtube</a>
         </div>
       </div>
     </_Footer>

@@ -7,32 +7,42 @@ const Title = styled.span`
   font-size: 14pt;
   font-weight: bold;
   font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+`
+
+const _Link = styled(Link)`
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
 `
 
 const _Header = styled.header`
   background: #222;
   padding: 20px 0;
   margin-bottom: 1rem;
+  color: white;
   & > div {
+    display: flex;
+    align-items: center;
+    width: 100vw;
     max-width: ${props => props.theme.maxWidth};
     margin: auto;
+  }
+  .spacer {
+    flex-grow: 1;
   }
 `
 
 const Header = ({ siteTitle }) => (
   <_Header>
     <div>
-      <Title style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+      <Title>
+        <_Link to="/">{siteTitle}</_Link>
       </Title>
+      <span class="spacer"></span>
+      <_Link to="/mentoring"> mentoring 👨‍💻</_Link>
     </div>
   </_Header>
 )
