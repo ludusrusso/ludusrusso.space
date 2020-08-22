@@ -42,7 +42,9 @@ const Header = ({ siteTitle }) => (
         <_Link to="/">{siteTitle}</_Link>
       </Title>
       <span class="spacer"></span>
-      <_Link to="/mentoring"> mentoring 👨‍💻</_Link>
+      <_Link to="/mentoring">
+        mentoring <span>👨‍💻</span>
+      </_Link>
     </div>
   </_Header>
 )
