@@ -2,12 +2,17 @@
 import React from "react"
 import styled from "@emotion/styled"
 
-const MyFooter = styled.footer`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+const _Footer = styled.footer`
   background: #eee;
   padding: 20px;
+
+  & > div {
+    max-width: ${props => props.theme.maxWidth};
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   p {
     padding: 0;
     margin: 0;
@@ -20,21 +25,30 @@ const MyFooter = styled.footer`
     color: black;
   }
 
-  @media (max-width: 800px) {
-    flex-direction: column;
+  @media (max-width: ${props => props.theme.maxWidth}) {
+    & > div {
+      & > * + * {
+        margin-top: 20px;
+      }
+      flex-direction: column;
+    }
   }
 `
 
 export const Footer = () => {
   return (
-    <MyFooter>
-      <p>Copyright © 2016 - 2020 @ludusrusso</p>
+    <_Footer>
       <div>
-        <a href="mailto:ludusrusso+website@ludusrusso.space">email</a>
-        <a href="https://twitter.com/ludusrusso">twitter</a>
-        <a href="https://www.linkedin.com/in/ludusrusso/">linkedin</a>
-        <a href="https://github.com/ludusrusso">github</a>
+        <p>
+          Copyright © 2016 - 2020 <strong>@ludusrusso</strong>
+        </p>
+        <div>
+          <a href="mailto:ludusrusso+website@ludusrusso.space">email</a>
+          <a href="https://twitter.com/ludusrusso">twitter</a>
+          <a href="https://www.linkedin.com/in/ludusrusso/">linkedin</a>
+          <a href="https://github.com/ludusrusso">github</a>
+        </div>
       </div>
-    </MyFooter>
+    </_Footer>
   )
 }

@@ -9,20 +9,19 @@ const Title = styled.span`
   font-family: sans-serif;
 `
 
+const _Header = styled.header`
+  background: #222;
+  padding: 20px 0;
+  margin-bottom: 1rem;
+  & > div {
+    max-width: ${props => props.theme.maxWidth};
+    margin: auto;
+  }
+`
+
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `#222`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+  <_Header>
+    <div>
       <Title style={{ margin: 0 }}>
         <Link
           to="/"
@@ -35,7 +34,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </Title>
     </div>
-  </header>
+  </_Header>
 )
 
 Header.propTypes = {
