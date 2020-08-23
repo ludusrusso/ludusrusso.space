@@ -8,29 +8,36 @@ import Highlight, { defaultProps } from "prism-react-renderer"
 import theme from "prism-react-renderer/themes/nightOwl"
 import { Pre } from "./styles"
 import { Disqus } from "gatsby-plugin-disqus"
+import styled from "@emotion/styled"
+
+const CodeCnt = styled.div`
+  margin: 0 -20px;
+`
 
 const Code = ({ children, className }) => {
   const language = className?.replace(/language-/, "") ?? ""
 
   return (
-    <Highlight
-      {...defaultProps}
-      theme={theme}
-      code={children}
-      language={language}
-    >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <Pre className={className} style={style}>
-          {tokens.map((line, i) => (
-            <div {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
-        </Pre>
-      )}
-    </Highlight>
+    <CodeCnt>
+      <Highlight
+        {...defaultProps}
+        theme={theme}
+        code={children}
+        language={language}
+      >
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <Pre className={className} style={style}>
+            {tokens.map((line, i) => (
+              <div {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </Pre>
+        )}
+      </Highlight>
+    </CodeCnt>
   )
 }
 
@@ -39,19 +46,31 @@ const components = {
   Link,
 }
 
+const BlogContainer = styled.div`
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding 0 20px;
+`
+
+const Title = styled.h1`
+  text-align: center;
+  font-size: 20pt;
+`
+
 export default function PageTemplate({ data: { mdx, site } }) {
   const disqusConfig = {
     url: site.siteMetadata.domain + mdx.fields.path,
     identifier: mdx.id,
     title: mdx.title,
   }
-  console.log(disqusConfig)
   return (
     <Template>
-      <h1>{mdx.frontmatter.title}</h1>
-      <MDXProvider components={components}>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
-      </MDXProvider>
+      <Title>{mdx.frontmatter.title}</Title>
+      <BlogContainer>
+        <MDXProvider components={components}>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </MDXProvider>
+      </BlogContainer>
 
       <Disqus config={disqusConfig} />
     </Template>
