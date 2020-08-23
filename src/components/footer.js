@@ -7,8 +7,8 @@ const _Footer = styled.footer`
   padding: 20px;
 
   & > div {
-    width: 100vw;
     max-width: ${props => props.theme.maxWidth};
+    padding: 0 10px;
     margin: auto;
     display: flex;
     justify-content: space-between;

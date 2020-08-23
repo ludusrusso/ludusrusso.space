@@ -24,11 +24,13 @@ const _Header = styled.header`
   margin-bottom: 1rem;
   color: white;
   & > div {
+    color: red;
+    max-width: ${props => props.theme.maxWidth};
     display: flex;
     align-items: center;
-    width: 100vw;
-    max-width: ${props => props.theme.maxWidth};
+    padding: 0 10px;
     margin: auto;
+    box-sizing: border-box;
   }
   .spacer {
     flex-grow: 1;
@@ -41,9 +43,12 @@ const Header = ({ siteTitle }) => (
       <Title>
         <_Link to="/">{siteTitle}</_Link>
       </Title>
-      <span class="spacer"></span>
+      <span className="spacer"></span>
       <_Link to="/mentoring">
-        mentoring <span>👨‍💻</span>
+        mentoring{" "}
+        <span role="img" aria-label="mentoring">
+          👨‍💻
+        </span>
       </_Link>
     </div>
   </_Header>

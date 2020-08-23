@@ -3,6 +3,7 @@ module.exports = {
     title: `@ludusrusso`,
     description: `@ludusrusso site`,
     author: `@ludusrusso`,
+    domain: process.env.URL,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -52,6 +53,12 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GATSBY_GOOGLE_ANALYTICS,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: process.env.DISQUS_SHORTNAME,
       },
     },
   ],

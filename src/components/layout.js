@@ -24,9 +24,11 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
   margin: 0 auto;
-  width: 100vw;
-  max-width: ${props => props.theme.maxWidth};
-`
+  width: ${props => props.theme.maxWidth};
+  box-sizing: border-box;
+  max-width: 100vw;
+  padding: 0 10px;
+}`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
