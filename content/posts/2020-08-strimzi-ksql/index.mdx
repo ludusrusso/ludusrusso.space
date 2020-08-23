@@ -6,8 +6,9 @@ date: 2020-08-23
 description: Setup KSQL on Kubernetes with Strimzi Kafka Operator
 ---
 
-[Strimzi](https://strimzi.io/) is a super simple Kubernetes Operators that allow you to run a kafka
-cluster on Kuberetes in minutes. In this post, we will see how to install
+[Strimzi](https://strimzi.io/) is a Kubernetes Operator that allow you
+to run a kafka cluster on Kuberetes in minutes.
+In this post, we will see how to install
 and use strimzi inside a K8s cluster and how to run
 KSQL with a strimzi Kafka cluster.
 
@@ -22,7 +23,7 @@ $ minikube start --memory=4096
 
 and I've created a namespaced named "`kafka`".
 
-To install the strimzi operator you simply need to run the following command:
+To install the strimzi operator we simply need to run the following command:
 
 ```bash
 $ kubectl apply -f 'https://strimzi.io/install/latest?namespace=kafka' -n kafka
@@ -79,7 +80,7 @@ spec:
     userOperator: {}
 ```
 
-this will define a kafka cluster with 1 zookeeper node and 1 kafka node, you
+this will define a kafka cluster with 1 zookeeper node and 1 kafka node, we
 can simply scale up replicas editing the file.
 
 Once created the resource using
@@ -88,7 +89,7 @@ Once created the resource using
 kubectl apply -f kafka.yaml
 ```
 
-you should see the new pods in your k8s cluster
+we should see the new pods in your k8s cluster
 
 ```bash
 $ kubectl k get pods
@@ -111,9 +112,9 @@ kafka-cluster-zookeeper-client   ClusterIP   10.96.215.241   <none>        2181/
 kafka-cluster-zookeeper-nodes    ClusterIP   None            <none>        2181/TCP,2888/TCP,3888/TCP   3m33s
 ```
 
-now, you can access the kafka using the `kafka-cluster-kafka-bootstrap` ip on port 9091 inside the cluster.
+now, we can access the kafka using the `kafka-cluster-kafka-bootstrap` ip on port 9092 inside the cluster.
 
-### Run the procuder
+### Run the producer
 
 ```bash
 $ kubectl -n kafka run kafka-producer -ti --image=strimzi/kafka:0.19.0-kafka-2.5.0 --rm=true --restart=Never -- bin/kafka-console-producer.sh --broker-list kafka-cluster-kafka-bootstrap:9092 --topic my-topic
@@ -127,9 +128,10 @@ $ kubectl -n kafka run kafka-consumer -ti --image=strimzi/kafka:0.19.0-kafka-2.5
 
 ## Setup KSQL
 
-To install a ksql node, we also need a schema registry node that is required by ksql.
+To install a ksql node, we need a schema registry node that is required by ksql.
 
-We will use helm (version 3 in my case) to install both schema registry and ksql. We will use the [helm charts](https://github.com/confluentinc/cp-helm-charts) provided by
+We will use [helm](https://helm.sh/) (version 3 in my case) to install both schema registry and ksql.
+We will use the [helm charts](https://github.com/confluentinc/cp-helm-charts) provided by
 [confluent](https://www.confluent.io/).
 
 ### Setup helm chart
@@ -140,7 +142,7 @@ the source code.
 
 ### Install the schema registry
 
-The schema registry is simple to install, we need only to provide the `kafkaBootstrap` configuration and leave
+The schema registry is simple to install, we need only to provide the `kafka.bootstrapServers` configuration and leave
 all remaining [values as default](https://github.com/confluentinc/cp-helm-charts/blob/master/charts/cp-schema-registry/values.yaml).
 
 To install it using helm, simply enter the directory `charts/cp-schema-registry` and run the following command
