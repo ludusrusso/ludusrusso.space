@@ -9,6 +9,7 @@ import theme from "prism-react-renderer/themes/nightOwl"
 import { Pre } from "./styles"
 import { Disqus } from "gatsby-plugin-disqus"
 import styled from "@emotion/styled"
+import SEO from "../components/seo"
 
 const CodeCnt = styled.div`
   margin: 0 -20px;
@@ -66,6 +67,10 @@ export default function PageTemplate({ data: { mdx, site } }) {
   return (
     <Template>
       <Title>{mdx.frontmatter.title}</Title>
+      <SEO
+        description={mdx.frontmatter.description}
+        title={mdx.frontmatter.title}
+      ></SEO>
       <BlogContainer>
         <MDXProvider components={components}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
@@ -89,6 +94,7 @@ export const query = graphql`
       body
       frontmatter {
         title
+        description
       }
       fields {
         path

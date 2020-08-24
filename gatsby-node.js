@@ -1,12 +1,14 @@
 const { createFilePath } = require("gatsby-source-filesystem")
 const path = require("path")
+const dateformat = require("dateformat")
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === "Mdx") {
     let { date, slug } = node.frontmatter
-    date = new Date(date)
-    const path = `/blog/${date.getFullYear()}/${date.getMonth() + 1}/${slug}`
+    dateString = dateformat(date, "yyyy/mm")
+    console.log(dateString)
+    const path = `/blog/${dateString}/${slug}`
     createNodeField({
       name: "path",
       node,

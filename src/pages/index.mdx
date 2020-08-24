@@ -1,5 +1,6 @@
 import { PageTemplate } from "../templates/page"
 export default PageTemplate
+import { Link } from "gatsby"
 
 import { RandomEmoji } from "../utils"
 
@@ -18,3 +19,40 @@ disability to work together on Open Source and Open Hardware assistive technolog
 
 I'm passionate on learning new techs, mainly on web and cloud
 computing, making and robotics!
+
+---
+
+<div>
+  <h2> My blog posts </h2>
+  {props.data.allMdx.edges.map(({ node }) => (
+    <div>
+      <h3> {node.frontmatter.title}</h3>
+      <p> published: {node.frontmatter.date} </p>
+      <p> {node.frontmatter.description}</p>
+      <Link to={node.fields.path}> Read the blog post...</Link>
+    </div>
+  ))}
+</div>
+
+export const query = graphql`
+  query LastBlogPost {
+    allMdx(
+      limit: 10
+      sort: { order: ASC, fields: frontmatter___date }
+      filter: { frontmatter: { public: { eq: true } } }
+    ) {
+      edges {
+        node {
+          fields {
+            path
+          }
+          frontmatter {
+            date(fromNow: false, formatString: "yyyy-MM-DD")
+            description
+            title
+          }
+        }
+      }
+    }
+  }
+`
