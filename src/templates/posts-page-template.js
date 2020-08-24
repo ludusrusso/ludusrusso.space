@@ -67,6 +67,8 @@ const Image = styled.img`
 `
 
 export default function PageTemplate({ data: { mdx, site } }) {
+  const imgSrc = mdx.frontmatter.featureImage.childImageSharp.fixed.src
+
   const disqusConfig = {
     url: site.siteMetadata.domain + mdx.fields.path,
     identifier: mdx.id,
@@ -76,15 +78,13 @@ export default function PageTemplate({ data: { mdx, site } }) {
     <Template>
       <Title>{mdx.frontmatter.title}</Title>
       <ImageCnt>
-        <Image
-          src={mdx.frontmatter.featureImage.childImageSharp.fixed.src}
-          alt={mdx.frontmatter.title}
-        />
+        <Image src={imgSrc} alt={mdx.frontmatter.title} />
       </ImageCnt>
 
       <SEO
         description={mdx.frontmatter.description}
         title={mdx.frontmatter.title}
+        image={imgSrc}
       ></SEO>
       <BlogContainer>
         <MDXProvider components={components}>
