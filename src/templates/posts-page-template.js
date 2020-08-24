@@ -58,6 +58,14 @@ const Title = styled.h1`
   font-size: 20pt;
 `
 
+const ImageCnt = styled.div`
+  padding: 40px;
+`
+
+const Image = styled.img`
+  width: 100%;
+`
+
 export default function PageTemplate({ data: { mdx, site } }) {
   const disqusConfig = {
     url: site.siteMetadata.domain + mdx.fields.path,
@@ -67,6 +75,13 @@ export default function PageTemplate({ data: { mdx, site } }) {
   return (
     <Template>
       <Title>{mdx.frontmatter.title}</Title>
+      <ImageCnt>
+        <Image
+          src={mdx.frontmatter.featureImage.childImageSharp.fixed.src}
+          alt={mdx.frontmatter.title}
+        />
+      </ImageCnt>
+
       <SEO
         description={mdx.frontmatter.description}
         title={mdx.frontmatter.title}
@@ -95,6 +110,13 @@ export const query = graphql`
       frontmatter {
         title
         description
+        featureImage {
+          childImageSharp {
+            fixed(width: 960) {
+              src
+            }
+          }
+        }
       }
       fields {
         path
