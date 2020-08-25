@@ -38,7 +38,7 @@ export const query = graphql`
   query LastBlogPost {
     allMdx(
       limit: 10
-      sort: { order: ASC, fields: frontmatter___date }
+      sort: { order: DESC, fields: frontmatter___date }
       filter: { frontmatter: { public: { eq: true } } }
     ) {
       edges {
