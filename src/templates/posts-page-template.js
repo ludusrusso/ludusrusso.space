@@ -11,6 +11,8 @@ import { Disqus } from "gatsby-plugin-disqus"
 import styled from "@emotion/styled"
 import SEO from "../components/seo"
 
+import tw from "tailwind.macro"
+
 const CodeCnt = styled.div`
   margin: 0 -20px;
 `
@@ -45,6 +47,7 @@ const Code = ({ children, className }) => {
 const components = {
   code: Code,
   Link,
+  p: tw.p`text-gray-700 text-base mb-4 text-xl`,
 }
 
 const BlogContainer = styled.div`
@@ -53,9 +56,9 @@ const BlogContainer = styled.div`
   padding 0 20px;
 `
 
-const Title = styled.h1`
-  text-align: center;
-  font-size: 20pt;
+const Title = tw.h1`
+font-bold text-4xl mb-2
+text-center
 `
 
 const ImageCnt = styled.div`

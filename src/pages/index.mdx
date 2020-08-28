@@ -3,6 +3,8 @@ export default PageTemplate
 import { Link } from "gatsby"
 
 import { RandomEmoji } from "../utils"
+import { Button } from "../components/button"
+import { PostPreviewList } from "../components/post-preview"
 
 export const emojis = ["🖖", "🤙", "🛩", "🚀"]
 
@@ -20,18 +22,11 @@ disability to work together on Open Source and Open Hardware assistive technolog
 I'm passionate on learning new techs, mainly on web and cloud
 computing, making and robotics!
 
----
+<Button> My Blog</Button>
 
 <div>
   <h2> My blog posts </h2>
-  {props.data.allMdx.edges.map(({ node }) => (
-    <div>
-      <h3> {node.frontmatter.title}</h3>
-      <p> published: {node.frontmatter.date} </p>
-      <p> {node.frontmatter.description}</p>
-      <Link to={node.fields.path}> Read the blog post...</Link>
-    </div>
-  ))}
+  <PostPreviewList posts={props.data.allMdx.edges.map(e => e.node)} />
 </div>
 
 export const query = graphql`
@@ -50,6 +45,13 @@ export const query = graphql`
             date(fromNow: false, formatString: "yyyy-MM-DD")
             description
             title
+            featureImage {
+              childImageSharp {
+                fixed(width: 400) {
+                  src
+                }
+              }
+            }
           }
         }
       }
