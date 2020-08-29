@@ -13,9 +13,7 @@ import SEO from "../components/seo"
 
 import tw from "tailwind.macro"
 
-const CodeCnt = styled.div`
-  margin: 0 -20px;
-`
+const CodeCnt = styled.div``
 
 const Code = ({ children, className }) => {
   const language = className?.replace(/language-/, "") ?? ""
@@ -47,19 +45,12 @@ const Code = ({ children, className }) => {
 const components = {
   code: Code,
   Link,
-  p: tw.p`text-gray-700 text-base mb-4 text-xl`,
+  p: tw.p`text-gray-700 text-base mt-4 text-xl`,
+  ol: tw.ul`list-disc ml-4`,
+  h1: tw.h2`text-gray-900 mt-4 text-2xl font-bold`,
+  h2: tw.h2`text-gray-900 mt-4 text-xl font-bold`,
+  a: tw.a`underline`,
 }
-
-const BlogContainer = styled.div`
-  border: 2px solid #eee;
-  border-radius: 10px;
-  padding 0 20px;
-`
-
-const Title = tw.h1`
-font-bold text-4xl mb-2
-text-center
-`
 
 const ImageCnt = styled.div`
   padding: 40px;
@@ -79,7 +70,9 @@ export default function PageTemplate({ data: { mdx, site } }) {
   }
   return (
     <Template>
-      <Title>{mdx.frontmatter.title}</Title>
+      <h1 className="text-4xl text-center font-bold">
+        {mdx.frontmatter.title}
+      </h1>
       <ImageCnt>
         <Image src={imgSrc} alt={mdx.frontmatter.title} />
       </ImageCnt>
@@ -89,11 +82,11 @@ export default function PageTemplate({ data: { mdx, site } }) {
         title={mdx.frontmatter.title}
         image={imgSrc}
       ></SEO>
-      <BlogContainer>
+      <div className="text-gray-800">
         <MDXProvider components={components}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
-      </BlogContainer>
+      </div>
 
       <Disqus config={disqusConfig} />
     </Template>

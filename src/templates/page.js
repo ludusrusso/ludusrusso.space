@@ -1,24 +1,13 @@
 import React from "react"
-import styled from "@emotion/styled"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Container = styled.div`
-  text-align: center;
-  border-radius: 10px;
-  margin: auto;
-  margin-bottom: 100px;
-  text-align: left;
-  width: 100%;
-`
-
-export const PageTemplate = ({ children }) => {
+export const PageTemplate = ({ children, data }) => {
+  console.log(data)
   return (
     <Layout>
-      <Container>
-        <SEO title="ludusrusso" />
-        {children}
-      </Container>
+      <SEO title="ludusrusso" />
+      <div className="max-w-2xl m-auto text-gray-900 mb-10">{children}</div>
     </Layout>
   )
 }
