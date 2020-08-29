@@ -3,7 +3,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 export const PageTemplate = ({ children, data }) => {
-  console.log(data)
   return (
     <Layout>
       <SEO title="ludusrusso" />

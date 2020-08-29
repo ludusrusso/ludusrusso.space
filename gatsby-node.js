@@ -7,7 +7,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === "Mdx") {
     let { date, slug } = node.frontmatter
     dateString = dateformat(date, "yyyy/mm")
-    console.log(dateString)
     const path = `/blog/${dateString}/${slug}`
     createNodeField({
       name: "path",
