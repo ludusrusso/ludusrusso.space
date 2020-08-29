@@ -1,0 +1,36 @@
+---
+title: Full Stack development with Angular, Nx and GraphQL with Code Generation
+slug: fullstack-nx-graphql
+public: false
+date: 2020-08-27
+description: In this post I explore I to perform full stack development in a monorepo environment like NX using Angular ang GraphQL
+featureImage: ./main.jpeg
+---
+
+Fullstack development is a blurred term, in means, in a simple sentence, the capability of a developer to work
+both on frontend and backend without a preference. Of course, there are lot's of different interpretations and defition
+of the tearm, as I've found a frontend[backend]-fullstack dev (one who does fullstack but prefers frontend [backend]).
+
+In the last few years, I've joined a small italian company and I was required to do both frontend and backend development,
+and in this period I develop some competencies on this field and I'd like to share in this post my work tools.
+
+# Tools
+
+## Angular
+
+Angular is currently my preferred framework to build web apps, I not a fanboy, I like also React and other framework and
+I'm experimenting with that. Angular was trivially the first frontend framework I learned and I've a good experience with it.
+
+## Nx Workspace
+
+I do fullstack development with Nx monorepo. The idea of monorepo is to have all the code of a project (frontend, backend, microservices, etc.)
+shared within a single repository. That's very usefull in order to maintain strong dependecies across projects
+that are deployed separatelly and make it more easy to write integration tests among various services.
+
+After some experimenting with different monorepo approaches, I found [Nx](https://nx.dev/) by [Nrwn](https://nrwl.io/)
+the favorite one. It's still not free of issues but it's a good compromise and simplify a lot the development!
+
+**nx** is a tool build on top of **Angular Cli** (**ng**), and inherit some usefull tools of _ng_ like schematics that I love very much.
+Moreover, it provides a good project structure even with big projects.
+
+## GraphQL and GraphQL code generator

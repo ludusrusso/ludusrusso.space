@@ -17,20 +17,20 @@ export const PostPreview = ({ post }) => (
       <div css={tw`font-bold text-xl mb-2`}>{post.frontmatter.title}</div>
       <p css={tw`text-gray-700 text-base`}>{post.frontmatter.description}</p>
     </div>
-    <div class="px-6 pt-4 pb-2"></div>
+    <div className="px-6 pt-4 pb-2"></div>
   </Link>
 )
 
-const Conainer = styled.div`
+const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
 `
 
 export const PostPreviewList = ({ posts }) => (
-  <Conainer>
+  <Container>
     {posts.map(post => (
       <PostPreview post={post} />
     ))}
-  </Conainer>
+  </Container>
 )
