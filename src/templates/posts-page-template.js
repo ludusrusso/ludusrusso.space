@@ -25,6 +25,7 @@ const Code = ({ children, className }) => {
         theme={theme}
         code={children}
         language={language}
+        className="rounded-lg"
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <Pre className={className} style={style}>
@@ -45,8 +46,9 @@ const Code = ({ children, className }) => {
 const components = {
   code: Code,
   Link,
-  p: tw.p`text-gray-700 text-base mt-4 text-xl`,
-  ol: tw.ul`list-disc ml-4`,
+  p: tw.p`text-gray-700 mt-8 text-xl`,
+  ol: tw.ul`list-disc ml-4 text-gray-70 text-xl`,
+  li: tw.li`mt-4 text-gray-70 text-xl leading-tight`,
   h1: tw.h2`text-gray-900 mt-4 text-2xl font-bold`,
   h2: tw.h2`text-gray-900 mt-4 text-xl font-bold`,
   a: tw.a`underline`,
@@ -70,12 +72,9 @@ export default function PageTemplate({ data: { mdx, site } }) {
   }
   return (
     <Template>
-      <h1 className="text-4xl text-center font-bold">
+      <h1 className="text-4xl font-bold leading-tight">
         {mdx.frontmatter.title}
       </h1>
-      <ImageCnt>
-        <Image src={imgSrc} alt={mdx.frontmatter.title} />
-      </ImageCnt>
 
       <SEO
         description={mdx.frontmatter.description}

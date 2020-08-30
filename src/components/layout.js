@@ -16,11 +16,7 @@ const theme = {
   maxWidth: "960px",
 }
 
-const Container = styled.div`
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-`
+const Container = styled.div``
 
 const InnerContainer = styled.div`
   margin: 0 auto;

@@ -28,7 +28,7 @@ const IndexPage = props => {
         </h1>
 
         <P>
-          I'm ☁️ cloud architect 🚀 and full stack developer independent
+          I'm a cloud architect ☁️ and a full stack developer 🚀 independent
           consultant based in Italy (Milano) with a background in Cloud Robotics
           🤖 and Computer Vision 📷!
         </P>
@@ -38,7 +38,7 @@ const IndexPage = props => {
           computing, making and robotics!
         </P>
 
-        <h2 className="text-2xl text-center mt-20 font-bold">
+        <h2 className="text-4xl text-center mt-20 font-bold">
           I like to <span className="text-green-600">share knowledge</span>! 🤝
         </h2>
 
@@ -84,7 +84,7 @@ const IndexPage = props => {
         </div>
       </div>
       <div className="mb-10">
-        <h2 className="text-2xl text-center mt-20 font-bold">
+        <h2 className="text-4xl text-center mt-20 font-bold">
           I have a <span className="text-green-600">blog</span>! 📖
         </h2>
         <PostPreviewList posts={props.data.allMdx.edges.map(e => e.node)} />
