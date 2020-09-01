@@ -173,7 +173,7 @@ kafka-schema-registry-cp-schema-registry   ClusterIP   10.96.106.63    <none>   
 
 ## Install ksql server
 
-Last step is to install the ksql server. You need to access the directory `charts/cp-schema-registry` to install the chart.
+Last step is to install the ksql server. You need to **access the directory `charts/cp-ksql-server`** to install the chart.
 We need to override two parametes in this case: the `kafka.bootstrapServers` and the `cp-schema-registry.url` url, that
 have to point to the service of the schema registry we've just created.
 
@@ -184,12 +184,12 @@ $ helm install ksql-server --set cp-schema-registry.url="http://kafka-schema-reg
 We will finaly have a ksql pod and a ksql service to interact with our kafka cluster.
 
 ```bash
-$ kubectl get pod
+$ kubectl get pod -n kafka
 #...
 NAME                                                        READY   STATUS    RESTARTS   AGE
 ksql-server-cp-ksql-server-798bfc5859-dfdlm                 2/2     Running   0          4m3s
 
-$ kubectl get services
+$ kubectl get services -n kafka
 
 NAME                                       TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
 # ...
@@ -202,7 +202,7 @@ To access the ksql server, you need to run a pod with ksql command
 installed. I use the image `confluentinc/cp-ksql-cli` provided by confluent to do that.
 
 ```bash
-$ kubectl run tmp-ksql-cli --rm -i --tty --image confluentinc/cp-ksql-cli:5.2.1 http://ksql-server-cp-ksql-server:8088
+$ kubectl -n kafka run tmp-ksql-cli --rm -i --tty --image confluentinc/cp-ksql-cli:5.2.1 http://ksql-server-cp-ksql-server:8088
 
 kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
 If you don't see a command prompt, try pressing enter.
