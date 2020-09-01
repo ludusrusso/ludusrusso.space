@@ -46,11 +46,13 @@ const Code = ({ children, className }) => {
 const components = {
   code: Code,
   Link,
-  p: tw.p`text-gray-700 mt-8 text-xl`,
+  p: tw.p`text-gray-700 mt-4 text-xl`,
   ol: tw.ul`list-disc ml-4 text-gray-70 text-xl`,
   li: tw.li`mt-4 text-gray-70 text-xl leading-tight`,
-  h1: tw.h2`text-gray-900 mt-4 text-2xl font-bold`,
-  h2: tw.h2`text-gray-900 mt-4 text-xl font-bold`,
+  h1: tw.h2`text-gray-800 mt-12 text-2xl font-bold`,
+  h2: tw.h2`text-gray-800 mt-12 text-xl font-bold`,
+  h3: tw.h2`text-gray-800 mt-12 text-xl font-bold`,
+  h4: tw.h2`text-gray-800 mt-12 text-xl font-bold`,
   a: tw.a`underline`,
 }
 
@@ -72,9 +74,14 @@ export default function PageTemplate({ data: { mdx, site } }) {
   }
   return (
     <Template>
-      <h1 className="text-4xl font-bold leading-tight">
+      <h1 className="text-4xl font-bold leading-tight mt-16 ">
         {mdx.frontmatter.title}
       </h1>
+
+      <p className="font-semibold text-gray-500 mt-4 mb-10">
+        Ludovico Russo &bull; {mdx.frontmatter.date} &bull; read in{" "}
+        {mdx.timeToRead} mins
+      </p>
 
       <SEO
         description={mdx.frontmatter.description}
@@ -87,7 +94,9 @@ export default function PageTemplate({ data: { mdx, site } }) {
         </MDXProvider>
       </div>
 
-      <Disqus config={disqusConfig} />
+      <div className="mt-16">
+        <Disqus config={disqusConfig} />
+      </div>
     </Template>
   )
 }
@@ -102,8 +111,10 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       id
       body
+      timeToRead
       frontmatter {
         title
+        date(fromNow: false, formatString: "Do MMMM, yyyy")
         description
         featureImage {
           childImageSharp {
