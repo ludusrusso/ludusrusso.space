@@ -33,7 +33,7 @@ const MentoringPage = ({ data }) => {
         </h1>
 
         <a
-          className="inline-block px-4 py-2 w-full bg-green-500 text-white text-xl font-bold text-center rounded mt-4 hover:bg-green-700"
+          className="inline-block my-10 px-4 py-2 w-full bg-green-500 text-white text-xl font-bold text-center rounded hover:bg-green-700"
           href="https://calendly.com/ludusrusso/one2one"
           target="_blank"
         >
