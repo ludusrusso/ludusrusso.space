@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import { css, cx } from "emotion"
+import SEO from "../components/seo"
 
 const P = ({ children }) => {
   return <p className="text-xl mt-5">{children}</p>
@@ -20,10 +21,25 @@ const A = ({ children, href, target = undefined }) => (
 const MentoringPage = ({ data }) => {
   return (
     <Layout>
+      <SEO
+        title="mentoring"
+        image={data.mentoringImg.childImageSharp.fixed.src}
+        description="Want to learn together and share knowledge?"
+      ></SEO>
+
       <div className="max-w-xl mx-auto text-gray-900 mb-10">
         <h1 className="text-4xl text-center mt-10 font-bold">
           Want to learn together and share knowledge?
         </h1>
+
+        <a
+          className="inline-block px-4 py-2 w-full bg-green-500 text-white text-xl font-bold text-center rounded mt-4 hover:bg-green-700"
+          href="https://calendly.com/ludusrusso/one2one"
+          target="_blank"
+        >
+          Schedule a 45 min one2one session
+        </a>
+
         <img
           className="mt-10 max-w-full m-auto shadow"
           src={data.mentoringImg.childImageSharp.fixed.src}
@@ -77,7 +93,7 @@ const MentoringPage = ({ data }) => {
           href="https://calendly.com/ludusrusso/one2one"
           target="_blank"
         >
-          Schedule a meeting
+          Schedule a 45 min one2one session
         </a>
 
         <h2 className="text-2xl text-center mt-20 font-bold">
