@@ -110,8 +110,8 @@ const MentoringPage = ({ data }) => {
               {" "}
               Linkedin
             </A>{" "}
-            and add a <strong>Recommendation</strong> this would help me find
-            more people to help!
+            and add a <strong>recommendation</strong> on my profile! This would
+            help me find more people to help!
           </li>
           <li>
             Share this page on your favourite social! Help me spread this
