@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
+import { css, cx } from "emotion"
 
 const P = ({ children }) => {
   return <p className="text-xl mt-5">{children}</p>
@@ -78,6 +79,57 @@ const MentoringPage = ({ data }) => {
         >
           Schedule a meeting
         </a>
+
+        <h2 className="text-2xl text-center mt-20 font-bold">
+          Wanna help me and my project?
+        </h2>
+
+        <P>
+          I spend much time on helping people and push for{" "}
+          <strong> mutual improvement</strong>! So any help are really
+          appreciate.
+        </P>
+
+        <P>You can help me in different ways, here are some suggestions😃</P>
+
+        <ul
+          className={css`
+            li {
+              margin-top: 10px;
+              margin-left: 20px;
+            }
+            li:before {
+              content: "✅";
+              padding-right: 5px;
+            }
+          `}
+        >
+          <li>
+            Add me on{" "}
+            <A href="https://www.linkedin.com/in/ludusrusso/" target="_blank">
+              {" "}
+              Linkedin
+            </A>{" "}
+            and add a <strong>Recommendation</strong> this would help me find
+            more people to help!
+          </li>
+          <li>
+            Share this page on your favourite social! Help me spread this
+            project!
+          </li>
+          <li>
+            Offer me{" "}
+            <A
+              href="https://www.paypal.com/paypalme/ludusrusso/"
+              target="_blank"
+            >
+              something to drink
+            </A>
+            🍸!
+          </li>
+        </ul>
+
+        <h3 className="text-2xl text-center mt-20 font-bold"></h3>
 
         <p className="text-lg  mt-20 font-bold text-center">
           Thanks to
