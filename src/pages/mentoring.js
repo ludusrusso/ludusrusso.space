@@ -1,8 +1,9 @@
+import { css } from "emotion"
+import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
-import { graphql, Link } from "gatsby"
-import { css, cx } from "emotion"
 import SEO from "../components/seo"
+import mentoringSvg from "../images/mentoring.svg"
 
 const P = ({ children }) => {
   return <p className="text-xl mt-5">{children}</p>
@@ -37,7 +38,7 @@ const MentoringPage = ({ data }) => {
           href="https://calendly.com/ludusrusso/one2one"
           target="_blank"
         >
-          Schedule a 45 min one2one session
+          Schedule a one2one session
         </a>
 
         <img
@@ -93,8 +94,10 @@ const MentoringPage = ({ data }) => {
           href="https://calendly.com/ludusrusso/one2one"
           target="_blank"
         >
-          Schedule a 45 min one2one session
+          Schedule a one2one session
         </a>
+
+        <img src={mentoringSvg} className="w-full" />
 
         <h2 className="text-2xl text-center mt-20 font-bold">
           Wanna help me and my project?
