@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import mentoringSvg from "../images/mentoring.svg"
+import mentorSvg from "../images/mentor.svg"
 
 const P = ({ children }) => {
   return <p className="text-xl mt-5">{children}</p>
@@ -97,7 +97,7 @@ const MentoringPage = ({ data }) => {
           Schedule a one2one session
         </a>
 
-        <img src={mentoringSvg} className="w-full" />
+        <img src={mentorSvg} className="w-full" />
 
         <h2 className="text-2xl text-center mt-20 font-bold">
           Wanna help me and my project?
