@@ -3,7 +3,6 @@ import { graphql, Link } from "gatsby"
 import { RandomEmoji } from "../utils"
 import { PostPreviewList } from "../components/post-preview"
 import Layout from "../components/layout"
-import devSvg from "../images/dev.svg"
 
 export const emojis = ["🖖", "🤙", "🛩", "🚀"]
 
@@ -35,7 +34,8 @@ const IndexPage = props => {
           🤖 and Computer Vision 📷!
         </P>
 
-        <img src={devSvg} className="w-full my-10" alt="ludusrusso" />
+        <img src="/svg/dev.svg" className="w-full my-10" alt="ludusrusso" />
+
         <P>
           I'm passionate on learning new techs, mainly on web and cloud
           computing, making and robotics!
