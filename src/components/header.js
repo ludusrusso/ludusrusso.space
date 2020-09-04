@@ -12,16 +12,16 @@ const Title = styled.span`
 `
 
 const _Link = styled(Link)`
-  color: white;
+  color: #2f855a;
   text-decoration: none;
   margin: 0;
   padding: 0;
 `
 
 const _Header = styled.header`
-  background: #222;
   padding: 20px 0;
   margin-bottom: 1rem;
+  background: #e2e8f0;
   color: white;
   & > div {
     color: red;
