@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `@ludusrusso`,
-    description: `@ludusrusso site`,
+    title: `@ludusrusso space`,
+    description: `My personal space, for fun, dev and learn!`,
     author: `@ludusrusso`,
     domain: process.env.URL,
   },

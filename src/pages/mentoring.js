@@ -1,6 +1,8 @@
+import { css } from "emotion"
+import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
-import { graphql, Link } from "gatsby"
+import SEO from "../components/seo"
 
 const P = ({ children }) => {
   return <p className="text-xl mt-5">{children}</p>
@@ -19,10 +21,25 @@ const A = ({ children, href, target = undefined }) => (
 const MentoringPage = ({ data }) => {
   return (
     <Layout>
+      <SEO
+        title="mentoring"
+        image={data.mentoringImg.childImageSharp.fixed.src}
+        description="Want to learn together and share knowledge?"
+      ></SEO>
+
       <div className="max-w-xl mx-auto text-gray-900 mb-10">
         <h1 className="text-4xl text-center mt-10 font-bold">
           Want to learn together and share knowledge?
         </h1>
+
+        <a
+          className="inline-block my-10 px-4 py-2 w-full bg-green-500 text-white text-xl font-bold text-center rounded hover:bg-green-700"
+          href="https://calendly.com/ludusrusso/one2one"
+          target="_blank"
+        >
+          Schedule a one2one session
+        </a>
+
         <img
           className="mt-10 max-w-full m-auto shadow"
           src={data.mentoringImg.childImageSharp.fixed.src}
@@ -76,8 +93,61 @@ const MentoringPage = ({ data }) => {
           href="https://calendly.com/ludusrusso/one2one"
           target="_blank"
         >
-          Schedule a meeting
+          Schedule a one2one session
         </a>
+
+        <img src="/svg/mentor.svg" className="w-full" />
+
+        <h2 className="text-2xl text-center mt-20 font-bold">
+          Wanna help me and my project?
+        </h2>
+
+        <P>
+          I spend much time on helping people and push for{" "}
+          <strong> mutual improvement</strong>! So any help are really
+          appreciate.
+        </P>
+
+        <P>You can help me in different ways, here are some suggestions😃</P>
+
+        <ul
+          className={css`
+            li {
+              margin-top: 10px;
+              margin-left: 20px;
+            }
+            li:before {
+              content: "✅";
+              padding-right: 5px;
+            }
+          `}
+        >
+          <li>
+            Add me on{" "}
+            <A href="https://www.linkedin.com/in/ludusrusso/" target="_blank">
+              {" "}
+              Linkedin
+            </A>{" "}
+            and add a <strong>recommendation</strong> on my profile! This would
+            help me find more people to help!
+          </li>
+          <li>
+            Share this page on your favourite social! Help me spread this
+            project!
+          </li>
+          <li>
+            Offer me{" "}
+            <A
+              href="https://www.paypal.com/paypalme/ludusrusso/"
+              target="_blank"
+            >
+              something to drink
+            </A>
+            🍸!
+          </li>
+        </ul>
+
+        <h3 className="text-2xl text-center mt-20 font-bold"></h3>
 
         <p className="text-lg  mt-20 font-bold text-center">
           Thanks to

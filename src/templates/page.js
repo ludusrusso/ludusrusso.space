@@ -6,7 +6,7 @@ export const PageTemplate = ({ children, data }) => {
   return (
     <Layout>
       <SEO title="ludusrusso" />
-      <div className="max-w-2xl m-auto text-gray-900 mb-10">{children}</div>
+      <div className="max-w-2xl m-auto text-gray-900 mb-10 ">{children}</div>
     </Layout>
   )
 }
