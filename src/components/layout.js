@@ -16,14 +16,14 @@ const theme = {
   maxWidth: "960px",
 }
 
-const Container = styled.div``
+const Container = styled.div`
+  min-height: 100vh;
+`
 
 const InnerContainer = styled.div`
   margin: 0 auto;
   width: ${props => props.theme.maxWidth};
-  box-sizing: border-box;
-  max-width: 100vw;
-  padding: 0 10px;
+  box-sizing: border-box;div
 }`
 
 const Layout = ({ children }) => {
