@@ -56,14 +56,6 @@ const components = {
   a: tw.a`underline`,
 }
 
-const ImageCnt = styled.div`
-  padding: 40px;
-`
-
-const Image = styled.img`
-  width: 100%;
-`
-
 export default function PageTemplate({ data: { mdx, site } }) {
   const imgSrc = mdx.frontmatter.featureImage.childImageSharp.fixed.src
 

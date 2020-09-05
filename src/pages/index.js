@@ -80,6 +80,7 @@ const IndexPage = props => {
               className="inline-block mt-4 bg-green-600 px-4 py-2 rounded text-white font-bold hover:bg-green-800"
               href="https://calendly.com/ludusrusso/one2one"
               target="_blank"
+              rel="noreferrer"
             >
               Schedule a session
             </a>
