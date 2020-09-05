@@ -110,7 +110,12 @@ const MentoringPage = ({ data }) => {
           appreciate.
         </P>
 
-        <P>You can help me in different ways, here are some suggestions😃</P>
+        <P>
+          You can help me in different ways, here are some suggestions{" "}
+          <span role="img" aria-label="face">
+            😃
+          </span>
+        </P>
 
         <ul
           className={css`
@@ -145,16 +150,20 @@ const MentoringPage = ({ data }) => {
             >
               something to drink
             </A>
-            🍸!
+            <span role="img" aria-label="drink">
+              🍸
+            </span>
+            !
           </li>
         </ul>
-
-        <h3 className="text-2xl text-center mt-20 font-bold"></h3>
 
         <p className="text-lg  mt-20 font-bold text-center">
           Thanks to
           <A href="https://jagasantagostino.com/mentoring"> Jaga </A>
-          for the idea! 😀
+          for the idea!{" "}
+          <span role="img" aria-label="face">
+            😆
+          </span>
         </p>
       </div>
     </Layout>
