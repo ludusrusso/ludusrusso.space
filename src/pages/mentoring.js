@@ -33,6 +33,7 @@ const MentoringPage = ({ data }) => {
         </h1>
 
         <a
+          rel="noreferrer"
           className="inline-block my-10 px-4 py-2 w-full bg-green-500 text-white text-xl font-bold text-center rounded hover:bg-green-700"
           href="https://calendly.com/ludusrusso/one2one"
           target="_blank"
@@ -89,6 +90,7 @@ const MentoringPage = ({ data }) => {
         </P>
 
         <a
+          rel="noreferrer"
           className="inline-block px-4 py-2 w-full bg-green-500 text-white text-xl font-bold text-center rounded mt-4 hover:bg-green-700"
           href="https://calendly.com/ludusrusso/one2one"
           target="_blank"
@@ -96,7 +98,7 @@ const MentoringPage = ({ data }) => {
           Schedule a one2one session
         </a>
 
-        <img src="/svg/mentor.svg" className="w-full" />
+        <img src="/svg/mentor.svg" alt="Mentoring" className="w-full" />
 
         <h2 className="text-2xl text-center mt-20 font-bold">
           Wanna help me and my project?
