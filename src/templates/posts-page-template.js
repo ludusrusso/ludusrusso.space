@@ -60,7 +60,7 @@ export default function PageTemplate({ data: { mdx, site } }) {
   const imgSrc = mdx.frontmatter.featureImage.childImageSharp.fixed.src
 
   const disqusConfig = {
-    url: site.siteMetadata.domain + mdx.fields.path,
+    url: site.siteMetadata.siteUrl + mdx.fields.path,
     identifier: mdx.id,
     title: mdx.title,
   }
@@ -97,7 +97,7 @@ export const query = graphql`
   query BlogPostQuery($id: String) {
     site {
       siteMetadata {
-        domain
+        siteUrl
       }
     }
     mdx(id: { eq: $id }) {

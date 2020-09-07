@@ -7,10 +7,11 @@ module.exports = {
     title: `@ludusrusso space`,
     description: `My personal space, for fun, dev and learn!`,
     author: `@ludusrusso`,
-    domain: process.env.URL,
+    siteUrl: process.env.URL,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
