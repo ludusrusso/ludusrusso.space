@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import { RandomEmoji } from "../utils"
 import { PostPreviewList } from "../components/post-preview"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 export const emojis = ["🖖", "🤙", "🛩", "🚀"]
 
@@ -22,6 +23,7 @@ const A = ({ children, href }) => (
 const IndexPage = props => {
   return (
     <Layout>
+      <SEO />
       <div className="max-w-xl mx-auto text-gray-900">
         <h1 className="text-4xl text-center mt-10 font-bold">
           I am <span className="text-green-600"> Ludovico </span>{" "}

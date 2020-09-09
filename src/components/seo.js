@@ -27,7 +27,7 @@ function SEO({ description, lang, meta, title, image }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const imgUrl = site.siteMetadata.siteUrl + image
+  const imgUrl = site.siteMetadata.siteUrl + (image || "/images/profile.jpg")
 
   return (
     <Helmet
