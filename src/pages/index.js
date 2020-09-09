@@ -23,7 +23,7 @@ const A = ({ children, href }) => (
 const IndexPage = props => {
   return (
     <Layout>
-      <SEO />
+      <SEO title="@ludusrusso" description="this site is for work and fun!" />
       <div className="max-w-xl mx-auto text-gray-900">
         <h1 className="text-4xl text-center mt-10 font-bold">
           I am <span className="text-green-600"> Ludovico </span>{" "}
