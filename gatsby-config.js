@@ -61,6 +61,21 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-iubenda-cookie-footer",
+      options: {
+        iubendaOptions: {
+          lang: "en",
+          siteId: 1997956,
+          cookiePolicyId: 27457911,
+          banner: {
+            acceptButtonDisplay: true,
+            customizeButtonDisplay: true,
+            position: "float-top-center",
+          },
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-disqus`,
       options: {
         shortname: process.env.DISQUS_SHORTNAME,

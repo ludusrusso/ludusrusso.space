@@ -59,6 +59,25 @@ export const Footer = () => {
           available on github
         </a>
       </p>
+
+      <div className="mt-4">
+        <a
+          className="mx-2 font-bold text-xs text-gray-600"
+          href="https://www.iubenda.com/privacy-policy/27457911"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Privacy Policy
+        </a>
+        <a
+          className="mx-2 font-bold text-xs text-gray-600"
+          href="https://www.iubenda.com/privacy-policy/27457911/cookie-policy"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Cookie Policy
+        </a>
+      </div>
     </div>
   )
 }
