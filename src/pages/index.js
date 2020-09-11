@@ -4,6 +4,7 @@ import { RandomEmoji } from "../utils"
 import { PostPreviewList } from "../components/post-preview"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 export const emojis = ["🖖", "🤙", "🛩", "🚀"]
 
@@ -12,12 +13,12 @@ const P = ({ children }) => {
 }
 
 const A = ({ children, href }) => (
-  <a
+  <OutboundLink
     href={href}
     className="border-b-2 border-green-500 text-green-900 font-semibold hover:bg-green-200"
   >
      {children}
-  </a>
+  </OutboundLink>
 )
 
 const IndexPage = props => {
@@ -96,14 +97,14 @@ const IndexPage = props => {
               </Link>
             </p>
 
-            <a
+            <OutboundLink
               className="inline-block mt-4 bg-green-600 px-4 py-2 rounded text-white font-bold hover:bg-green-800"
               href="https://calendly.com/ludusrusso/one2one"
               target="_blank"
               rel="noreferrer"
             >
               Schedule a session
-            </a>
+            </OutboundLink>
           </div>
         </div>
       </div>

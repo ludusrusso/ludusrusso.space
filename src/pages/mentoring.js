@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const P = ({ children }) => {
   return <p className="text-xl mt-5">{children}</p>
@@ -32,14 +33,14 @@ const MentoringPage = ({ data }) => {
           Want to learn together and share knowledge?
         </h1>
 
-        <a
+        <OutboundLink
           rel="noreferrer"
           className="inline-block my-10 px-4 py-2 w-full bg-green-500 text-white text-xl font-bold text-center rounded hover:bg-green-700"
           href="https://calendly.com/ludusrusso/one2one"
           target="_blank"
         >
           Schedule a one2one session
-        </a>
+        </OutboundLink>
 
         <img
           className="mt-10 max-w-full m-auto shadow"
@@ -89,14 +90,14 @@ const MentoringPage = ({ data }) => {
           and do pair coding!
         </P>
 
-        <a
+        <OutboundLink
           rel="noreferrer"
           className="inline-block px-4 py-2 w-full bg-green-500 text-white text-xl font-bold text-center rounded mt-4 hover:bg-green-700"
           href="https://calendly.com/ludusrusso/one2one"
           target="_blank"
         >
           Schedule a one2one session
-        </a>
+        </OutboundLink>
 
         <img src="/svg/mentor.svg" alt="Mentoring" className="w-full" />
 
